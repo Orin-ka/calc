@@ -17,15 +17,15 @@ class Arabic {
         this.imput = c;
     }
 
-     //Геттер переменной imput
+     /*/Геттер переменной imput
     public String getImput () {
         return imput;
-    }
+    }*/
 
-    // Сеттер переменной result
+    /*/ Сеттер переменной result
     public void setResult (int c) {
         this.result = c;
-    }
+    }*/
 
     //Геттер переменной result
     public int getResult () {
