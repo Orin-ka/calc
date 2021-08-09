@@ -1,6 +1,6 @@
 package com.company;
 
-public class Roman {
+class Roman {
 
    String[] RomanNumerals = new String[] { "none", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" };
 

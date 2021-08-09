@@ -1,6 +1,6 @@
 package com.company;
 
-public class Arabic {
+class Arabic {
 
     private String imput;
     int a; //= imput.substring(0, 1);
