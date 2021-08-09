@@ -2,16 +2,35 @@ package com.company;
 
 public class Arabic {
 
-    public String imput;
+    private String imput;
     int a; //= imput.substring(0, 1);
     int b; //= imput.substring(imput.length()-2, imput.length()-1);
-    public  int result;
+    private  int result;
 
-// конструктор
+     // конструктор
     Arabic (String s){
         this.imput = s;
     }
 
+     // Сеттер переменной imput
+    public void setImput (String c) {
+        this.imput = c;
+    }
+
+     //Геттер переменной imput
+    public String getImput () {
+        return imput;
+    }
+
+    // Сеттер переменной result
+    public void setResult (int c) {
+        this.result = c;
+    }
+
+    //Геттер переменной result
+    public int getResult () {
+        return result;
+    }
 
     public void StringToExpression() {
 
