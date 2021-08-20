@@ -33,14 +33,19 @@ public class Main {
                System.out.println("Выражение не соответствует шаблону с арабскими числами!");
                if (patternRom) {
                    System.out.println("Выражение с римскими числами");
+
+                   Roman rom = new Roman(str);
+
                } else {
                    System.out.println("Выражение не соответствует шаблону с римскими числами!");
                }
            }
 
-       } catch (Exception e) {
-           System.out.println("throw Exception 1");
-       }
+       }  catch( RomaNumberNotIntervalException ex){
+           System.out.println(ex.getMessage());
+          catch (Exception ex) {
+               System.out.println("throw Exception 1");
+           }
     }
 
 
