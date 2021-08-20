@@ -3,6 +3,7 @@ package com.company;
 class Arabic {
 
     private String imput;
+    private String[] ab;
     int a;
     int b;
     private  int result;
@@ -28,64 +29,32 @@ class Arabic {
     }
 
 
-    public void StringToExpression() {
+    public int Resultat(){
 
        try {
-           String stra = this.imput.substring(0, 2);
+           ab = new String[2];
+           ab = imput.split(" ");
 
-           int k = imput.length() - 2;
-           String strb = this.imput.substring(k);
+           ab[0].trim();
+           ab[1].trim();
+           ab[2].trim();
 
+           a = Integer.parseInt(ab[0]);
+           b = Integer.parseInt(ab[2]);
 
-              a = ToDigit(stra, 1);
-              b = ToDigit(strb, k);
-
-
-           if (imput.contains("+")) {
-               this.result = a + b;
+           switch(ab[1]){
+               case "+" : this.result = a + b ; break;
+               case "-" : this.result = a - b ; break;
+               case "*" : this.result = a * b ; break;
+               case "/" : this.result = a / b ; break;
            }
 
-           if (imput.contains("-")) {
-               this.result = a - b;
-           }
 
-           if (imput.contains("*")) {
-               this.result = a * b;
-           }
 
-           if (imput.contains("/")) {
-               this.result = a / b;
-           } //else this.result = 0;
-
-       } catch (Exception e) {
-           System.out.println("throw Exception 2");
+       } catch (Exception e)  {
+            System.out.println("throw Exception Resultat()");
        }
-    }
-
-    /*
-   Метод обрезает i-тый элемент строки, если он не является числом
-   и возвращает целое число из подстроки
-    */
-    public static int ToDigit(String st, int i1){
-
-       try {
-          char[] text = st.toCharArray();
-
-          if (!(Character.isDigit(text[i1]))) {
-              text[i1] = (char)32; //замена "не цифры" пробелом
-           }
-
-          // Массив символов перевести в строку
-          String s = new String(text);
-          //пробел обрезаем
-          String resultString = s.trim();
-          // переводим строку в integer, присваиваем атрибуту result
-           this.setResult() = Integer.parseInt(resultString);
-
-       } catch (Exception e) {
-           System.out.println("throw Exception 3");
-       }
-        return this.getResult();
+        return this.result;
     }
 
 }
