@@ -13,15 +13,15 @@ class Arabic {
           this.imput = s;
     }
 
-     // Сеттер переменной imput
-    public void setImput (String c) {
-        this.imput = c;
-    }
+   // Сеттер переменной imput
+   // public void setImput (String c) {
+   //     this.imput = c;
+   // }
 
     // Сеттер переменной result
-    private void setResult (int c) {
-        this.result = c;
-    }
+    //private void setResult (int c) {
+    //    this.result = c;
+    //}
 
     //Геттер переменной result
     public int getResult () {
@@ -42,7 +42,7 @@ class Arabic {
            a = Integer.parseInt(ab[0]);
            b = Integer.parseInt(ab[2]);
 
-           switch(ab[1]){
+           switch (ab[1]) {
                case "+" : this.result = a + b ; break;
                case "-" : this.result = a - b ; break;
                case "*" : this.result = a * b ; break;
