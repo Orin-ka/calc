@@ -9,10 +9,10 @@ class Roman {
   private int arab;   //арабский эквивалент
 
   private String[] RomanNumerals = new String[] { "null", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" };
-    // private int[]   ArabicNumerals = new int[]   { 0,     1,     2,    3,     4,    5,   6,    7,     8,      9,   10 };
+
 
   // конструктор
-  Roman (String s){
+    Roman (String s){
       this.roman = s;
   }
 
@@ -38,8 +38,6 @@ class Roman {
     public int ToArab(String stringRoman) throws RomaNumberNotIntervalException {
 
       try {
-//    private String[] RomanNumerals = new String[] { "null", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X" };
-//    напоминание)
 
        int flag = 0;
           for (int i = 1; i <= 10; i++){
@@ -54,13 +52,6 @@ class Roman {
           }
 
 
-           /* for (int i = 1; i <= 10; i++){
-               if (stringRoman == RomanNumerals[i]) {
-                   this.arab = i;
-               }
-
-           }*/
-
       } catch (Exception ex) {
               System.out.println("Ошибка перевода римского числа в арабское");
       }
@@ -73,16 +64,18 @@ class Roman {
 // Перевод арабского числа в римское , интервал от 1 до 100
 // дописать.........
 
-  public String ToRoman(int number) {
+    static String toRoman (int intArab){
 
+        String[] ones = new String[] {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+        String[] tens = new String[] {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+        String[] hunds = new String[] {"", "C", "CC", "CCC"};
 
-         if ((number >= 1) && (number <= 100)) {
-             this.roman = RomanNumerals[number];
-         }
+        int h = intArab / 100;
+        int t = (intArab - 100 * h ) / 10;
+        int o = intArab - 100 * h - 10 * t;
 
-
-      return RomanNumerals[number];
-  }
+        return hunds[h] + tens[t] + ones[o];
+    }
 
 
 }

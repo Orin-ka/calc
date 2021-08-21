@@ -36,16 +36,21 @@ public class Main {
 
                    Roman rom = new Roman(str);
 
+
                } else {
                    System.out.println("Выражение не соответствует шаблону с римскими числами!");
                }
            }
 
-       }  catch( RomaNumberNotIntervalException ex){
-           System.out.println(ex.getMessage());
-          catch (Exception ex) {
+       }
+       catch( RomaNumberNotIntervalException ex) {
+               System.out.println(ex.getMessage());
+       }
+
+       catch (Exception ex) {
                System.out.println("throw Exception 1");
-           }
+       }
+
     }
 
 
